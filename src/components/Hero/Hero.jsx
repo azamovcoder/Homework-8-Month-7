@@ -1,6 +1,5 @@
 import "./Hero.scss";
 
-import Counter from "../counter/Counter";
 import React from "react";
 
 const Hero = () => {
@@ -14,7 +13,6 @@ const Hero = () => {
             All handmade with natural soy wax, Candleaf is a companion for all
             your pleasure moments
           </p>
-          <Counter />
           <button>Discovery our collection</button>
         </div>
       </div>

@@ -1,8 +1,16 @@
+import { api } from "./api";
+import cartSlice from "./features/cart/cartSlice";
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "@/lib/features/counterSlice";
+import wishlistSlice from "./features/wishlist/wishlistSlice";
 
-export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
-});
+export const makeStore = () => {
+  return configureStore({
+    reducer: {
+      wishlist: wishlistSlice,
+      cart: cartSlice,
+      [api.reducerPath]: api.reducer,
+    },
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware().concat(api.middleware),
+  });
+};

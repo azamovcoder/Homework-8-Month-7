@@ -1,9 +1,10 @@
 import "./globals.css";
 
+import DefaultValues from "@/components/Default-Values/DeafaultValues";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import { Inter } from "next/font/google";
-import StoreProvider from "./StoreProvider";
+import StoreProvider from "./storeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <StoreProvider>
+          <DefaultValues />
           <Header />
           {children}
           <Footer />
